@@ -87,8 +87,8 @@ def get_article(id):
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
-        news_article = None
+        news_articles = None
         if get_news_response["articles"]:
             news_article_list = get_news_response["articles"]
-            news_article = process_articles(news_article_list)
+            news_article = process_article(news_article_list)
     return news_article
