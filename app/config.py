@@ -1,29 +1,22 @@
 class Config:
     '''
-    General configuration parent class
+    general configuration parent class
     '''
-    NEWS_API_BASE_URL ='https://newsapi.org/v2/sources?language=en&apiKey=3f6d5609132447cfa88a87c355e8253d'
-    NEWS_ARTICLE_URL ='https://newsapi.org/v2/sources?language=en&apiKey=3f6d5609132447cfa88a87c355e8253d'
-
-
-
+    NEWS_API_BASE_URL = 'https://newsapi.org/v2/sources?language=en&apiKey={}'
+    NEWS_ARTICLE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
 
 class ProdConfig(Config):
     '''
-    Production  configuration child class
-
+    production configuration child class
     Args:
-        Config: The parent configuration class with General configuration settings
+        config: The parent configuration class with general configuration settings
     '''
-    pass
-
-
+    DEBUG = True
+    
 class DevConfig(Config):
     '''
-    Development  configuration child class
-
+    development configuration child class
     Args:
-        Config: The parent configuration class with General configuration settings
+         config: The parent configuration class with general configuration settings
     '''
-
     DEBUG = True
